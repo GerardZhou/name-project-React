@@ -6,6 +6,10 @@ export default function Form() {
     // console.log(e.target.value);
     setName(e.target.value);
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(name);
+  }
   return (
     <div>
       {name.firstName} - {name.lastName}
@@ -24,6 +28,7 @@ export default function Form() {
           type="text"
           value={name.lastName}
         ></input>
+        <button onClick={(e) => handleSubmit(e)}> Add </button>
       </form>
     </div>
   );
